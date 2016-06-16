@@ -1,23 +1,26 @@
 package com.egs_home.lesson9.Compaign;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Compaign  {
-    String firstName;
-    String lastName;
-    String postion;
-    LinkedList<Employer> employers = new LinkedList<>();
+public class Compaign {
+    private String firstName;
+    private String lastName;
+    private String postion;
+    private LinkedList<Employer> employers = new LinkedList<>();
     Scanner sc = new Scanner(System.in);
+
+
+
 
 
     public static void main(String[] args) {
         Compaign compaign = new Compaign();
         compaign.go();
-
-
     }
 
     //
