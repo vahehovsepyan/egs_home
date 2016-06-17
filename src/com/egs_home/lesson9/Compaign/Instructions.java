@@ -10,12 +10,19 @@ public enum Instructions {
 
     EXIT("exit"),
     ADD_EMPLOYER("add"),
+    COMPAIR("compair"),
+    ALL_EMPLOYERS("all"),
+
+    //поиск
     SEARCH_EMPLOYER("search"),
     SEARCH_BY_NAME("name"),
     SEARCH_BY_FAMILY("family"),
     SEARCH_BY_POSITION("position"),
-    COMPAIR("compair"),
-    ALL_EMPLOYERS("all");
+
+    //языки
+    EN("en"),
+    RUS("ru"),
+    ARM("arm");
 
 
     private static final HashMap<String ,Instructions> instructions = new HashMap<String, Instructions>();

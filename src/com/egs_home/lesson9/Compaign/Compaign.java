@@ -2,6 +2,7 @@ package com.egs_home.lesson9.Compaign;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -12,25 +13,31 @@ public class Compaign {
     private String lastName;
     private String postion;
     private LinkedList<Employer> employers = new LinkedList<>();
+    Prop languageProps;
     Scanner sc = new Scanner(System.in);
 
-
-
-
-
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
         Compaign compaign = new Compaign();
-        compaign.go();
+        compaign.languageChoose();
+    }
+
+    public void languageChoose(){
+        languageProps=new Prop();
+        System.out.println("для выбора русского языка введите: "+Instructions.RUS.getInstField());
+        System.out.println("for english enter: "+Instructions.EN.getInstField());
+        Prop.language=sc.nextLine();
+        go();
+
     }
 
     //
-    public void go(){
+    public void go()  {
         String instruction;
-        System.out.println("добавление сотрудника: "+ Instructions.ADD_EMPLOYER.getInstField());
-        System.out.println("список всех сотрудников: "+ Instructions.ALL_EMPLOYERS.getInstField());
-        System.out.println("поиск сотрудника: "+ Instructions.SEARCH_EMPLOYER.getInstField());
-        System.out.println("сортировка по должности: "+Instructions.COMPAIR.getInstField());
-        System.out.println("выход из программы: "+ Instructions.EXIT.getInstField());
+        System.out.println(languageProps.languageCheck(Instructions.ADD_EMPLOYER.getInstField())+ Instructions.ADD_EMPLOYER.getInstField());
+        System.out.println(languageProps.languageCheck(Instructions.ALL_EMPLOYERS.getInstField())+ Instructions.ALL_EMPLOYERS.getInstField());
+        System.out.println(languageProps.languageCheck(Instructions.SEARCH_EMPLOYER.getInstField())+ Instructions.SEARCH_EMPLOYER.getInstField());
+        System.out.println(languageProps.languageCheck(Instructions.COMPAIR.getInstField())+Instructions.COMPAIR.getInstField());
+        System.out.println(languageProps.languageCheck(Instructions.EXIT.getInstField())+ Instructions.EXIT.getInstField());
         while (true){
             instruction=sc.nextLine();
 
@@ -152,7 +159,6 @@ public class Compaign {
         Double salary ;
         System.out.println("Для выхода введите: exit");
         while (true){
-            firstName="";
             System.out.println("Введите имя сотрудника: ");
             firstName = sc.nextLine();
             if (firstName.equals(Instructions.EXIT.getInstField())){go();}
@@ -186,7 +192,6 @@ public class Compaign {
             }
 
             System.out.println("Введите зарплату сотрудника: ");
-
                 try {
                    salary = sc.nextDouble();
                 }catch (Exception e){
@@ -194,8 +199,6 @@ public class Compaign {
                     System.out.println();
                     continue;
                 }
-
-
             employers.add(new Employer(firstName,lastName,WorkerPositions.getByWorkerPriority(postion),salary));
         }
 
