@@ -12,6 +12,7 @@ public enum Instructions {
     ADD_EMPLOYER("add"),
     COMPAIR("compair"),
     ALL_EMPLOYERS("all"),
+    OUT("out"),
 
     //поиск
     SEARCH_EMPLOYER("search"),
@@ -22,8 +23,16 @@ public enum Instructions {
     //языки
     EN("en"),
     RUS("ru"),
-    ARM("arm");
+    ARM("arm"),
 
+    //properties keys
+    NOTHING_FIND,
+    INPUT,
+    INPUT_NAME,
+    INPUT_FAMILY,
+    INPUT_POSITION,
+    INPUT_SALARY,
+    POSITIONS_IN_COMPANY;
 
     private static final HashMap<String ,Instructions> instructions = new HashMap<String, Instructions>();
 
@@ -34,6 +43,11 @@ public enum Instructions {
     }
 
     private String instField;
+
+
+    Instructions() {
+
+    }
 
     public String getInstField() {
         return instField;

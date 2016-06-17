@@ -24,7 +24,7 @@ public class Prop {
     }
 
     //чтение английского Properties
-    public String readEn(String instructions){
+    private String readEn(String instructions){
         try {
             props.load(new FileInputStream(new File("/home/vahe/IdeaProjects/EGS_HOME/src/com/egs_home/lesson9/res/en.properties")));
         } catch (IOException e) {
@@ -35,7 +35,7 @@ public class Prop {
     }
 
     //чтение русского Properties
-    public String readRu(String instructions){
+    private String readRu(String instructions){
         try {
             props.load(new FileInputStream(new File("/home/vahe/IdeaProjects/EGS_HOME/src/com/egs_home/lesson9/res/ru.properties")));
         } catch (IOException e) {
