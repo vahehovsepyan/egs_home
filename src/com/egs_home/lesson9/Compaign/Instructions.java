@@ -13,6 +13,7 @@ public enum Instructions {
     COMPAIR("compair"),
     ALL_EMPLOYERS("all"),
     OUT("out"),
+    CLEAR("clear"),
 
     //поиск
     SEARCH_EMPLOYER("search"),
