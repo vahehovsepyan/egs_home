@@ -1,3 +1,0 @@
-a a intern 66.0
-b b senior 78.0
-c c intern 78.0
